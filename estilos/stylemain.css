@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Italianno', 'poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    background-image: linear-gradient(45deg, #734E39, #D9C6B0, #BFB375); 
+}
+.box
+{
+
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    border-radius: 50% ;
+    overflow: hidden;
+    
+}
+.box::before
+{
+    content: '';
+    position: absolute;
+    inset: -10px 140px ;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+.box:hover::before
+{
+    inset: -20px 0px;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+} 
+.box::after
+{
+    content: '';
+    position:absolute;
+    inset: 6px;
+    
+    border-radius: 50%;
+    background: #d0c1aa; 
+    z-index: 1;
+}
+.content
+{
+    position: absolute;
+    inset: 0px;
+    border: 6px solid transparent;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+.box:hover .content img
+{
+    opacity: 0;
+}
+.content h2
+{
+    position: relative;
+    font-size: 1.7em;
+    text-align: center;
+    text-shadow: 0px 0px 3px black;
+    color: #000;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: solid;
+}
+.content h2 span
+{
+    font-weight: 300;
+    font-size: 0.75em;
+}
+.content a
+{
+    position: relative;
+    margin-top: 10px;
+    padding: 15px 20px;
+    background: #fff;
+    color: #070a1c;
+    border-radius: 50%;
+    font-weight: 250;
+    font-size: 1.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.content a:hover
+{
+    letter-spacing: 0.3em;
+    text-shadow: 0px 0px 3px #102e4e,
+                0px 0px 8px #102e4e,
+                0px 0px 20px #102e4e;
+}
